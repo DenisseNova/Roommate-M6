@@ -168,10 +168,10 @@ Articulos de limpieza</textarea
           $("#roommatesSelectModal").html("");
           roommates.forEach((r) => {
             $("#roommatesSelect").append(`
-          <option value="${r.nombre}">${r.nombre}</option>
+          <option value="${r.id}">${r.nombre}</option>
           `);
             $("#roommatesSelectModal").append(`
-          <option value="${r.nombre}">${r.nombre}</option>
+          <option value="${r.id}">${r.nombre}</option>
           `);
             $("#roommates").append(`
                   <tr>
