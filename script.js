@@ -1,5 +1,6 @@
 const fs = require('fs')
 const http = require('http')
+const { nuevoRoom } = require('./roommate')
 
 const PORT = 3000
 
@@ -16,6 +17,14 @@ http.createServer((req, res) =>{
   if(req.url == '/style.css' && req.method == 'GET'){
     return res.end(fs.readFileSync('./style.css', 'utf8'));
   }
+
+  if(req.url.startsWith('/roommate') && req.method == 'POST'){
+    nuevoRoom().then(async(usuarioRoom)=> {
+
+    });
+
+  }
+
   res.statusCode = 404;
   res.end();
 }).listen(PORT, ()=> console.log(`escuchando puerto ${PORT}`))
