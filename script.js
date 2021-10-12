@@ -42,11 +42,63 @@ http.createServer(async (req, res) =>{
     return res.end(fs.readFileSync('./gastos.json', 'utf8'))
   }
 
-  if(req.url.startsWith('/gasto') && req.method == 'POST'){
+  /*if(req.url.startsWith('/gasto') && req.method == 'POST'){
     res.setHeader('Content-type', 'application/json');
     return res.end(fs.readFileSync('./gastos.json', 'utf8'))
+
+  }*/
+  let gastosJSON = JSON.parse(fs.readFileSync('./archivos/gastos.json','utf8'));
+  let gastos = gastosJSON.gastos;
+
+  if(req.url.startsWith('/gasto') && req.method == 'POST'){
+    const gastosJSON = await nuevoGastos().catch(e => { return; })
+    if (!gastosJSON){
+      console.log('Error al cargar gasto nuevo', e)
+      return res.end()
+    }
+    req.on('end',() => {
+        gasto = {
+            id: uuidv4(),
+            roommate,
+            descripcion,
+            monto
+        };
+
+        gastos.push(gasto);
+
+        fs.writeFileSync('./gastos.json',JSON.stringify(gastosJSON,null,1));
+        res.end();
+        console.log('Gasto registrado con éxito en el archivo gastos.json');
+    })
   }
+  /*if (req.url.startsWith("/bicicletas") && req.method == "PUT") { 
+    let body;
+    req.on("data", (payload) => {
+      body = JSON.parse(payload);
+    });
+    req.on("end", () => {
+      bicicletasJSON.bicicletas = bicicletas.map((b) => {
+        if (b.id == body.id) { return body;
+      }
+    return b; });
+      fs.writeFileSync("gastos.json",
+    JSON.stringify(bicicletasJSON));
+    res.end();
+    });
+  }
+
+  if (req.url.startsWith("/gasto") && req.method == "DELETE") { // Paso 3
+    const { id } = url.parse(req.url, true).query;
+    // Paso 4
+      bicicletasJSON.bicicletas = bicicletas.filter((b) => b.id !== id);
+    // Paso 5
+      fs.writeFileSync("gastos.json", JSON.stringify(bicicletasJSON));
+    res.end(); 
+  }*/
+
 
   res.statusCode = 404;
   res.end();
 }).listen(PORT, ()=> console.log(`escuchando puerto ${PORT}`))
+
+

@@ -1,8 +1,14 @@
 {
   "roommates": [
     {
-      "id": "9ee20f",
-      "nombre": "Afşar Çapanoğlu",
+      "id": "9c68b9",
+      "nombre": "Isabella Mitchelle",
+      "debe": 0,
+      "recibe": 0
+    },
+    {
+      "id": "bfd7b7",
+      "nombre": "Josep Aguilar",
       "debe": 0,
       "recibe": 0
     }
