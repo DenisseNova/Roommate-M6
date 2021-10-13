@@ -1,14 +1,20 @@
 {
   "roommates": [
     {
-      "id": "ecf124",
-      "nombre": "Becky Kennedy",
-      "debe": 1990000,
+      "id": "7ffd99",
+      "nombre": "كيان قاسمی",
+      "debe": 0,
       "recibe": 0
     },
     {
-      "id": "fa0cb3",
-      "nombre": "Hector Leclerc",
+      "id": "c4731a",
+      "nombre": "Everett Kuhn",
+      "debe": 0,
+      "recibe": 0
+    },
+    {
+      "id": "2b451f",
+      "nombre": "Axel David",
       "debe": 0,
       "recibe": 0
     }

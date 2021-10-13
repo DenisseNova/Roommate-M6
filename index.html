@@ -174,7 +174,7 @@ Articulos de limpieza</textarea
             $("#roommates").append(`
                   <tr>
                     <td>${r.nombre}</td>
-                    <td class="text-danger">${r.debe ? r.debe : "-"}</td>
+                    <td class="text-danger">${r.debe ? '$' + Number(r.debe).toLocaleString('es-CL') : "-"}</td>
                     <td class="text-success">${r.recibe ? r.recibe : "-"}</td>
                   </tr>
               `);
