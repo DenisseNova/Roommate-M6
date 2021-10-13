@@ -183,7 +183,7 @@ Articulos de limpieza</textarea
           gastos.forEach((g) => {
             $("#gastosHistorial").append(`
                 <tr>
-                  <td>${g.roommate}</td>
+                  <td>${g.nombre}</td>
                   <td>${g.descripcion}</td>
                   <td>${g.monto}</td>
                   <td class="d-flex align-items-center justify-content-between">
@@ -246,8 +246,8 @@ Articulos de limpieza</textarea
 
       const editGasto = (id) => {
         gastoEditing = id;
-        const { roommate, descripcion, monto } = gastos.find((g) => g.id == id);
-        $("#roommatesSelectModal").val(roommate);
+        const { nombre, descripcion, monto, userId } = gastos.find((g) => g.id == id);
+        $("#roommatesSelectModal").val(userId);
         $("#descripcionModal").html(descripcion);
         $("#montoModal").val(monto);
       };

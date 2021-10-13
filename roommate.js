@@ -2,6 +2,7 @@ const axios = require('axios')
 const { v4: uuidv4 } = require('uuid')
 const fs = require('fs')
 
+
 const nuevoRoom = async () => {
   try{
     const {data} = await axios.get('https://randomuser.me/api')
@@ -24,4 +25,15 @@ const guardarRoom = (usuarioRoom) => {
   fs.writeFileSync('usuarios.json', JSON.stringify(roomJSON, null, 2))
 }
 
-module.exports = { nuevoRoom, guardarRoom }
+const obtenerRoommates = () => {
+  const roomJSON = JSON.parse(fs.readFileSync('usuarios.json', 'utf8'));
+  if (roomJSON && roomJSON.roommates) return roomJSON.roommates;
+  return [];
+}
+
+const obtenerUsuarioPorId = (id) => {
+  const users = obtenerRoommates();
+  return users.find(el => el.id === id)
+}
+
+module.exports = { nuevoRoom, guardarRoom, obtenerRoommates, obtenerUsuarioPorId }

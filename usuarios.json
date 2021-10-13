@@ -1,15 +1,21 @@
 {
   "roommates": [
     {
-      "id": "9c68b9",
-      "nombre": "Isabella Mitchelle",
+      "id": "83348a",
+      "nombre": "Tracy Pearson",
+      "debe": 15000,
+      "recibe": 0
+    },
+    {
+      "id": "8b3fb8",
+      "nombre": "Jade Pelletier",
       "debe": 0,
       "recibe": 0
     },
     {
-      "id": "bfd7b7",
-      "nombre": "Josep Aguilar",
-      "debe": 0,
+      "id": "2f2792",
+      "nombre": "Manon Renard",
+      "debe": 15000,
       "recibe": 0
     }
   ]
