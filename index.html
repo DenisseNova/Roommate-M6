@@ -185,7 +185,7 @@ Articulos de limpieza</textarea
                 <tr>
                   <td>${g.nombre}</td>
                   <td>${g.descripcion}</td>
-                  <td>${g.monto}</td>
+                  <td>$${Number(g.monto).toLocaleString('es-CL')}</td>
                   <td class="d-flex align-items-center justify-content-between">
                     <i class="fas fa-edit text-warning" onclick="editGasto('${g.id}')" data-toggle="modal" data-target="#exampleModal"></i>
                     <i class="fas fa-trash-alt text-danger" onclick="deleteGasto('${g.id}')" ></i>

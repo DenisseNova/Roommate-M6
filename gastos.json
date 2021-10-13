@@ -1,18 +1,11 @@
 {
   "gastos": [
     {
-      "userId": "2f2792",
-      "nombre": "Manon Renard",
+      "userId": "ecf124",
+      "nombre": "Becky Kennedy",
       "descripcion": "Articulos de limpieza",
-      "monto": 15000,
-      "id": "1c6954"
-    },
-    {
-      "userId": "83348a",
-      "nombre": "Tracy Pearson",
-      "descripcion": "Articulos de limpieza",
-      "monto": 15000,
-      "id": "fe79da"
+      "monto": 1990000,
+      "id": "308944"
     }
   ]
 }
